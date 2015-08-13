@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.content {
+  width: 1200px;
+  height: 700px;
+  margin: 0 auto;
+  background-image: url('../images/sliderimage1.jpg');
+  backgroung-repeat: no-repeat;
+  background-position: 50% 50%;
+  text-align: center;
+  position: relative;
+  -webkit-perspective: 1200px;
+  -moz-perspective: 1200px;
+  perspective: 1200px;
+}
+.content:after {
+  height: 100%;
+  display: inline-block;
+  position: relative;
+  content: "";
+  vertical-align: middle;
+}
+.content .main-container {
+  width: 400px;
+  height: 300px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+.content .main-container img {
+  display: none;
+}
+.content .main-container .item {
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: inline-block;
+  position: absolute;
+  -webkit-box-reflect: below 10px -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 1;
+}
+.content .main-container .item1 {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.content .main-container .item2 {
+  backface-visibility: hidden;
+}
+.content .main-container .active {
+  display: inline-block;
+}
+.content .main-container p {
+  width: 1000px;
+  height: 1000px;
+  background: -webkit-radial-gradient(center center, 500px 500px, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.5));
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  margin-top: -500px;
+  margin-left: -500px;
+  transform: rotateX(90deg);
+  border-radius: 500px;
+}
+.content .main-container_hover {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-transition: 4s;
+  -moz-transition: 4s;
+  -o-transition: 4s;
+  transition: 4s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}

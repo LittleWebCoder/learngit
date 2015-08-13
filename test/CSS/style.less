@@ -1,0 +1,80 @@
+@import 'lesshat';
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.content{
+	width: 1200px;
+	height: 700px;
+	margin: 0 auto;
+	background-image: url('../images/sliderimage1.jpg');
+	backgroung-repeat: no-repeat;
+	background-position: 50% 50%;
+    text-align: center;
+    position: relative;
+    .perspective(1200);
+
+    &:after{
+    	height: 100%;
+    	display: inline-block;
+    	position: relative;
+    	content: "";
+    	vertical-align: middle;
+    }
+
+	.main-container{
+		width: 400px;
+		height: 300px;
+		display: inline-block;
+		position: relative;
+		vertical-align: middle;
+
+		img{
+			display: none;
+		}
+
+		.item{
+			top: 0;
+			left: 0;
+			width: 100%;
+			display: inline-block;
+			position: absolute;
+			-webkit-box-reflect: below 10px -webkit-linear-gradient(top,rgba(0,0,0,0) 70%,rgba(0,0,0,0.5) 100%);
+			z-index: 1;
+		}
+
+		.item1{
+			.rotateY(180);
+		}
+
+		.item2{
+			backface-visibility: hidden;
+		}
+
+		.active{
+			display: inline-block;
+		}
+
+		p{
+			width: 1000px;
+			height: 1000px;
+			background: -webkit-radial-gradient(center center,500px 500px,rgba(255,255,255,0.3),rgba(0,0,0,0.5));
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			margin-top: -500px;
+			margin-left: -500px;
+			transform: rotateX(90deg);
+			border-radius: 500px;
+		}
+	}
+
+	.main-container_hover{
+		.rotateY(180);
+		.transition(4s);
+		.transform-style(preserve-3d);
+	}
+}
+
